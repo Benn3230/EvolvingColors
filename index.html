@@ -1,0 +1,33 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Evolving Colors</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="./assetmanager.js"></script>
+    <script type="text/javascript" src="./timer.js"></script>
+    <script type="text/javascript" src="./gameengine.js"></script>
+    <script type="text/javascript" src="./plant.js"></script>
+    <script type="text/javascript" src="./animat.js"></script>
+    <script type="text/javascript" src="./automata.js"></script>
+    <script type="text/javascript" src="./util.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
+</head>
+<body>
+    <canvas id="gameWorld" width="1000" height="1000" style="background: white; border: 1px solid black" tabindex="0" autofocus></canvas>
+    <hr>
+    <label for="plantGrowth">Plant Growth Rate</label>
+    <input type="range" id="plantGrowth" min="0" max="60" step="1" class="slider">
+
+    <label for="animatGrowth">Animat Growth Rate</label>
+    <input type="range" id="animatGrowth" min="0" max="60" step="1" class="slider">
+
+    <label for="selectivity">Animat Selectivity</label>
+    <input type="range" id="selectivity" min="0" max="60" step="1" class="slider">
+    <hr>
+    <button id="addplant">Add Plant</button>
+    <button id="addanimat">Add Animat</button>
+    <button id="clear">Clear Board</button>
+</body>
+</html>
