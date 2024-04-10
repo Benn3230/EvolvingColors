@@ -13,21 +13,73 @@
     <script type="text/javascript" src="./automata.js"></script>
     <script type="text/javascript" src="./util.js"></script>
     <script type="text/javascript" src="./main.js"></script>
+    <script>
+        function createDefault() {
+            document.getElementById("plantGrowth").value = 80;
+            document.getElementById("animatGrowth").value = 96;
+            document.getElementById("selectivity").value = 90;
+            document.getElementById("plantMutate").value = 10;
+            document.getElementById("animatMutate").value = 5;
+        }
+
+        function createStructures() {
+            document.getElementById("plantGrowth").value = 100;
+            document.getElementById("animatGrowth").value = 90;
+            document.getElementById("selectivity").value = 90;
+            document.getElementById("plantMutate").value = 10;
+            document.getElementById("animatMutate").value = 5;
+        }
+
+        function createPicky() {
+            document.getElementById("plantGrowth").value = 95;
+            document.getElementById("animatGrowth").value = 90;
+            document.getElementById("selectivity").value = 160;
+            document.getElementById("plantMutate").value = 10;
+            document.getElementById("animatMutate").value = 5;
+        }
+
+        function createDye() {
+            document.getElementById("plantGrowth").value = 90;
+            document.getElementById("animatGrowth").value = 96;
+            document.getElementById("selectivity").value = 90;
+            document.getElementById("plantMutate").value = 45;
+            document.getElementById("animatMutate").value = 0;
+        }
+    </script>
 </head>
 <body>
     <canvas id="gameWorld" width="1000" height="1000" style="background: white; border: 1px solid black" tabindex="0" autofocus></canvas>
     <hr>
     <label for="plantGrowth">Plant Growth Rate</label>
-    <input type="range" id="plantGrowth" min="0" max="60" step="1" class="slider">
+    <input type="range" id="plantGrowth" min="0" max="100" step="1" value="80" class="slider">
 
     <label for="animatGrowth">Animat Growth Rate</label>
-    <input type="range" id="animatGrowth" min="0" max="60" step="1" class="slider">
+    <input type="range" id="animatGrowth" min="0" max="100" step="1" value="96" class="slider">
 
     <label for="selectivity">Animat Selectivity</label>
-    <input type="range" id="selectivity" min="0" max="60" step="1" class="slider">
+    <input type="range" id="selectivity" min="0" max="180" step="1" value ="90" class="slider">
     <hr>
     <button id="addplant">Add Plant</button>
     <button id="addanimat">Add Animat</button>
     <button id="clear">Clear Board</button>
+    <hr>
+    <h2>Presets</h2>
+    <button id="default" onclick="createDefault()">Default</button>
+    <button id="struct" onclick="createStructures()">Rainbow Structures</button>
+    <button id="picky" onclick="createPicky()">Picky Eaters</button>
+    <button id="tiedye" onclick="createDye()">Tie-Dye</button>
+    <br>
+    <h2>Options</h2>
+    <label for="plantMutate">Maximum color difference in mutated child plant</label>
+    <input type="range" id="plantMutate" min="1" max="45" step="1" value="10">
+    <br>
+    <label for="animatMutate">Maximum color difference in mutated child animat</label>
+    <input type="range" id="animatMutate" min="1" max="45" step="1" value="5">
+    <br>
+    <label for="moveCost">Animats take energy to move</label>
+    <input type="checkbox" id="moveCost">
+    <br>
+    <label for="noPlantDeath">Plants do not die naturally</label>
+    <input type="checkbox" id="noPlantDeath">
 </body>
 </html>
